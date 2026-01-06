@@ -1,0 +1,106 @@
+/* Custom styles for Module 3 solution (no inline styles allowed) */
+
+/* Basic page setup */
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* Ensure the navbar container spans full width on mobile */
+.nav-container {
+  /* keep default container-fluid behavior; we override padding on xs below */
+}
+
+/* Page title spacing */
+.page-title {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+/* Tall section styling and background */
+.menu-section {
+  background-color: #e6e9ec; /* distinct background for the tall section */
+  padding-top: 40px;
+  padding-bottom: 40px;
+  min-height: 1000px; /* tall enough to force scrolling */
+}
+
+/* Inner menu box (to visually match mockup center block) */
+.menu-inner {
+  background-color: #bdbdbd;
+  padding: 20px;
+  max-width: 720px;
+  margin: 0 auto;
+  color: #111;
+}
+
+/* Mobile menu styling: make the collapsed navbar full width and distinct */
+@media (max-width: 767px) {
+  /* Remove left/right padding so navbar elements align with viewport edges */
+  .nav-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Make the mobile dropdown full-width and visually distinct */
+  #mobile-menu.navbar-collapse {
+    width: 100%;
+    background-color: #ffffff; /* background for the dropdown container */
+    border-top: 4px solid #d3d3d3;
+    box-shadow: none;
+  }
+
+  /* Style the list to match the mockup: full-width rows with separators */
+  .mobile-menu-list {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .mobile-menu-list > li {
+    width: 100%;
+    border-top: 1px solid #999;
+  }
+
+  .mobile-menu-list > li:first-child {
+    border-top: none;
+  }
+
+  .mobile-menu-list > li > a {
+    display: block;
+    width: 100%;
+    padding: 14px 16px;
+    text-align: center;
+    color: #111;
+    background-color: #fff;
+  }
+
+  /* Slightly larger brand padding on mobile for visual spacing */
+  .navbar-brand {
+    padding-left: 16px;
+  }
+
+  /* Ensure the hamburger icon is visible and aligned on mobile */
+  .navbar-toggle {
+    margin-right: 12px;
+  }
+}
+
+/* Ensure visible-xs elements are hidden on larger screens (Bootstrap handles this
+   but we reinforce it to satisfy assignment hints). */
+@media (min-width: 768px) {
+  .visible-xs {
+    display: none !important;
+  }
+
+  /* Ensure mobile-collapse remains hidden on larger screens */
+  #mobile-menu {
+    display: none !important;
+  }
+}
+
+/* Desktop/tablet: center the inner menu box width */
+@media (min-width: 768px) {
+  .menu-inner {
+    margin-top: 20px;
+  }
+}
